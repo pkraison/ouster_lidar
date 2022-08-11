@@ -5,6 +5,9 @@ import sensor_msgs.point_cloud2 as pcl
 import os
 from array import array
 import shutil
+# Lidar Rosbag to Kitti format converter.
+"""Record the rosbag with lidar and IMU and provide the directory as input and a directory
+for output files in Kitti format"""
 
 if __name__ == '__main__':
   
