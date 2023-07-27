@@ -11,11 +11,11 @@ for output files in Kitti format"""
 
 if __name__ == '__main__':
   
-  parser = argparse.ArgumentParser(description='turn list of rosbags into ColoRadar dasatet format')
-  parser.add_argument('-i', '--in_dir', type=str, default = '/home/ndprra/Documents/RadarTB/rrd/ColoRadar_tools-master2/python/bags/', help='directory in which input bag files are stored')
-  parser.add_argument('-o', '--out_dir', default = '/home/ndprra/Documents/RadarTB/rrd/ColoRadar_tools-master2/python/li', type=str, help='base directory for output dataset')
-  parser.add_argument('--lidar', type=str, default='/os_cloud_node/points')
-  parser.add_argument('--imu', type=str, default='/os_cloud_node/imu')
+  parser = argparse.ArgumentParser(description='turn list of rosbags into ColoRadar/Kitti dasatet format')
+  parser.add_argument('-i', '--in_dir', type=str, default = '', help='directory in which input bag files are stored')
+  parser.add_argument('-o', '--out_dir', default = '', type=str, help='base directory for output dataset')
+  parser.add_argument('--lidar', type=str, default='/os_cloud_node/points',help='lidar pointcloud message topic')
+  parser.add_argument('--imu', type=str, default='/os_cloud_node/imu', help='IMU message topic')
   args = parser.parse_args()
 
   if args.in_dir[-1] != '/':
