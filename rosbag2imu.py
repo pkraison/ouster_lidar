@@ -1,3 +1,5 @@
+'''
+@pkraison (Prashant Kumar Rai)'''
 import rosbag
 import argparse
 import os
@@ -5,11 +7,12 @@ from array import array
 import shutil
 # Lidar Rosbag to Kitti format converter.
 """Record the rosbag with IMU and provide the directory as input and a directory
-for output files in Kitti format"""
+for output files in Kitti format
+Run: python3 rosbag2imu.py -in '/path to bag files/' --out '/path to output/' --imu 'imu topic name' """
 
 if __name__ == '__main__':
   
-  parser = argparse.ArgumentParser(description='turn list of rosbags into ColoRadar/Kitti dasatet format')
+  parser = argparse.ArgumentParser(description='turn list of rosbags into Kitti dasatet format')
   parser.add_argument('-i', '--in_dir', type=str, default = '', help='directory in which input bag files are stored')
   parser.add_argument('-o', '--out_dir', default = '', type=str, help='base directory for output dataset')
   parser.add_argument('--imu', type=str, default='/os_cloud_node/imu', help='IMU message topic')
